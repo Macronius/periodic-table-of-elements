@@ -5,9 +5,7 @@ import styled from 'styled-components';
 
 
 const ElementalData = (props) => {
-    console.log("props: ", props);
-    const {atomic_mass, boil, density, melt, name, number, symbol, summary, xpos, ypos} = props.data;
-    const { val } = props.val;
+    const {atomic_mass, boil, density, melt, name, number, symbol, summary} = props.data;
 
     const atomic_volume = (atomic_mass / density).toFixed(2);
     
