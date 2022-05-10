@@ -1,31 +1,31 @@
 
 
 
-export const electron_dot_structure = (p5, number, radius, offset, r_e_max) => {
+const electron_dot_structure_utility = (p5, number, radius, offset, r_e_max) => {
 
     // number of electrons equals number of protons
     let total_remaining = number;
     let values;
     const orbitals = [2,8,8,18,18,32,32];
 
-    console.log("number: ", number, " total_remaining: ", total_remaining);
+    // console.log("number: ", number, " total_remaining: ", total_remaining);
 
     let energy_levels;
 
     if (number <= 2) {
-        console.log("1st energy level endpoint");
+        // console.log("1st energy level endpoint");
         energy_levels = 1;
     }
     if (number > 2  &&  number <= 10) {
-        console.log("2nd energy level endpoint");
+        // console.log("2nd energy level endpoint");
         energy_levels = 2;
     }
     if (number > 10  &&  number <= 18) {
-        console.log("3rd energy level endpoint");
+        // console.log("3rd energy level endpoint");
         energy_levels = 3;
     }
     if (number > 18  &&  number <= 36) {
-        console.log("4th energy level endpoint");
+        // console.log("4th energy level endpoint");
         energy_levels = 4;
     }
     if (number > 36  &&  number <= 54) {
@@ -66,7 +66,6 @@ export const electron_dot_structure = (p5, number, radius, offset, r_e_max) => {
 
         for (let j = 0; j < values; j++) {
 
-            // p5.fill("#8383ff");
             p5.fill("#ffffff");
             p5.stroke(218);
             p5.strokeWeight(0.5);
@@ -82,7 +81,9 @@ export const electron_dot_structure = (p5, number, radius, offset, r_e_max) => {
         if (proceed) {
             total_remaining -= orbital_i;
         }
-        console.log("total_remaining: ", total_remaining);
+        // console.log("total_remaining: ", total_remaining);
     }
 
 }
+
+export default electron_dot_structure_utility;

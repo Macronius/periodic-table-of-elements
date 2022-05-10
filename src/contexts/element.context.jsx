@@ -1,20 +1,27 @@
-import { createContext } from 'react';
-
-const initialState = {
-  a: 1,
-  b: 2,
-  c: 3,
-}
-
-export const ElementContext = createContext({
-  element_fromContext: null,
-  setElement_fromContext: () => null,
-  val: 40,
-});
+import React, { createContext, useState } from 'react';
 
 
-export const ElementProvider = () => {
+// CONTEXT
+export const ElementContext = createContext(
+  {
+    element: null,
+    setElement: () => null,
+  }
+);
 
-    const [val, setVal] = useState(5);
-    const [elem, setElem] = useState(initialState);
-}
+
+// PROVIDER
+export const ElementProvider = ({children}) => {
+
+  const [element, setElement] = useState(null);
+
+  const value = {element, setElement};
+
+  return (
+    <ElementContext.Provider
+      value={value}
+    >
+      {children}
+    </ElementContext.Provider>
+  )
+};

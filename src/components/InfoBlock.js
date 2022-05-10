@@ -11,11 +11,7 @@ import ElementalDiagram from '../components/element-report-components/ElementalD
 
 const InfoBlock = ({val, elem}) => {
 
-
-    console.log(`val: ${val}; elem: ${elem}`);
-
     const active_element = data.elements[val];
-    // const active_element = val;
 
     return (
         <InfoBlockStyled>

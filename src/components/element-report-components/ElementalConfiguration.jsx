@@ -4,27 +4,43 @@ import Sketch from 'react-p5';
 
 import styled from 'styled-components';
 
-import { electron_dot_structure } from '../../utilities/electrons.utility';
+import electron_dot_structure_utility from '../../utilities/electrons.utility';
+import nucleus_utility from '../../utilities/nucleus.utility'
+
+import data from '../../data/PeriodicTableJSON.json';
 
 let r_ring = 15;
 let r_circ = r_ring / 1.618;
 let offset = 12;
 
+let atomic_mass, 
+    electron_configuration, 
+    electron_configuration_semantic, 
+    number;
+
 
 
 
 export const ElementalConfiguration = (props) => {
-
-    const {atomic_mass, electron_configuration, electron_configuration_semantic, number} = props.data;
-    console.log(`
-        atomic mass: ${atomic_mass}\n
-        electron_configuration: ${electron_configuration}\n
-        electron_configuration_semantic: ${electron_configuration_semantic}\n
-        number: ${number}\n
-    `)
+    // console.log("[ElementalConfiguration] props: ", props.data);
+    
+    if (props.data) {
+        ({atomic_mass, electron_configuration, electron_configuration_semantic, number} = props.data);
+    }
+    else {
+        ({atomic_mass, electron_configuration, electron_configuration_semantic, number} = data.elements[0]);
+    }
+    
+    // console.log(`
+    //     atomic mass: ${atomic_mass}\n
+    //     electron_configuration: ${electron_configuration}\n
+    //     electron_configuration_semantic: ${electron_configuration_semantic}\n
+    //     number: ${number}\n
+    // `);
+    // const {proton, neutron, electron} = props.particleMass;
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(250,250).parent(canvasParentRef);
+        p5.createCanvas(300,300).parent(canvasParentRef);
         p5.background("rgb(51,51,51)");
         p5.angleMode(p5.DEGREES);
     };
@@ -67,7 +83,8 @@ export const ElementalConfiguration = (props) => {
             
         }
 
-        electron_dot_structure(p5, number, 35, offset, 5);
+        nucleus_utility(p5, props.particleMass, atomic_mass, number)
+        electron_dot_structure_utility(p5, number, 35, offset, 5);
 
     }
 
@@ -91,9 +108,10 @@ const ElementalConfigurationContainer = styled.div`
 `;
 
 const SketchActual = styled(Sketch)`
-    z-index: 5;
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    /* z-index: 5; */
+    /* width: 100%; */
+    /* height: 100%; */
     /* border: 3px solid yellow; */
     /* background-color: orange; */
 
