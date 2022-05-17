@@ -8,13 +8,8 @@ let atomic_volume;
 
 
 const ElementalData = (props) => {
-    // console.log("[ElementalData] props: ", props);
-    
-    // const {atomic_mass, boil, density, melt, name, number, symbol, summary} = props.data;
-    // const atomic_volume = (atomic_mass / density).toFixed(2);
 
     if (props.data) {
-        // console.log(props.data);
         ({atomic_mass, boil, density, melt, name, number, symbol, summary} = props.data);
         atomic_volume = (atomic_mass / density).toFixed(2);
     }
@@ -28,20 +23,12 @@ const ElementalData = (props) => {
         symbol = "H";
         summary = "Hydrogen is the lightest element on the Periodic Table of Elements.  Its monotomic form is the most abundant substance in the universe, constituting nearly 75% of all baryonic mass.";
         atomic_volume = (atomic_mass / density).toFixed(2);
-        // const atomic_mass = 1.008;
-        // const boil = 20.271;
-        // const density = 0.08988;
-        // const melt = 13.99;
-        // const name = "Hydrogen";
-        // const number = 1;
-        // const symbol = "H";
-        // const summary = "Hydrogen is the lightest element on the Periodic Table of Elements.  Its monotomic form is the most abundant substance in the universe, constituting nearly 75% of all baryonic mass.";
     }
     
 
     return (
         <ElementalDataContainer>
-            <div className="data-block label">
+            <div className="data-block label section-sm">
                 <h2>{name}</h2>
                 <div>
                     <p>Chemical Symbol: <span>{symbol}</span></p>
@@ -49,14 +36,14 @@ const ElementalData = (props) => {
                 </div>
             </div>
 
-            <div className="data-block summary">
+            <div className="data-block summary section-lg">
                 <h4>Element Summary:</h4>
-                <div>
+                <div className="summary-div">
                     <span className="summary">{summary}</span>
                 </div>
             </div>
             
-            <div className="data-block spatial">
+            <div className="data-block spatial section-sm">
                 <h4>Spatial:</h4>
                 <div>
                     <p>
@@ -74,7 +61,7 @@ const ElementalData = (props) => {
                 </div>
             </div>
 
-            <div className="data-block temps">
+            <div className="data-block temps section-sm">
                 <h4>Temperatures:</h4>
                 <div>
                     <p>T<sub>MP</sub>: <span>{melt}</span>°F</p>
@@ -89,17 +76,28 @@ export default ElementalData;
 const ElementalDataContainer = styled.div`
     /* width: calc(100% * 3/5); */
     width: 100%;
-    height: 500px;
+    height: 700px;
     /* height: 80%; */
-    background-color: orange;
-    outline: 0.5px solid;
+    /* background-color: orange; */
+    /* outline: 0.5px solid; */
     margin: 0;
-    padding: .5rem;
+    padding: .25rem;
     display: flex;
     flex-direction: column;
     /* align-items: space-around; */
     /* justify-content: center; */
     justify-content: space-around;
+
+    .section-lg {
+        height: 30%;
+        border-radius: 3px;
+        box-shadow: 0 0 15px slategray;
+    }
+    .section-sm {
+        height: 20%;
+        border-radius: 3px;
+        box-shadow: 0 0 15px slategray;
+    }
 
     
     .data-block {
@@ -108,20 +106,30 @@ const ElementalDataContainer = styled.div`
         align-items: space-around;
         margin-top: 1%;
         font-size: 10px;
-        padding: 1.5rem;
+        padding: 0.5rem;
         background-color: white;
+
+        .summary-div {
+            margin: none;
+            margin-top: none;
+            overflow-y: scroll;
+        }
 
         div {
             width: 100%;
+            height: 100%;
             display: flex;
             justify-content: space-around;
             align-items: center;
             margin: 0;
             padding: 0;
+            /* overflow-y: scroll; */
 
             span {
                 font-weight: bold;
                 font-size: 12px;
+                height: 100%;
+                /* outline: 1px solid; */
             }
         }
 
@@ -131,7 +139,8 @@ const ElementalDataContainer = styled.div`
 
         .summary {
             font-weight: lighter;
-            font-size: 10px;
+            font-size: 12px;
+            height: 60%;
             /* line-height: 1px; */
         }
 

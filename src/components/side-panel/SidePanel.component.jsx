@@ -1,13 +1,9 @@
 import React, { useContext } from 'react';
 
-
 import ElementalTile from './ElementalTile.component';
-// import ElementalTileClass from './ElementalTile.class';
-import ElementalData from '../element-report-components/ElementalData.component';
-import ElementalDiagram from '../element-report-components/ElementalDiagram.component';
+import ElementalData from '../element-report/ElementalData.component';
+import ElementalDiagram from '../element-report/ElementalDiagram.component';
 
-// import data from '../../data/PeriodicTableJSON.json';
-// import { SelectedValueContext } from '../../contexts/selectedValue.context';
 import { ElementContext } from '../../contexts/element.context';
 
 import styled from 'styled-components';
@@ -16,23 +12,17 @@ import styled from 'styled-components';
 
 const SidePanel = () => {
 
-    // const {selectedValue} = useContext(SelectedValueContext);
     const {element} = useContext(ElementContext);
-    // console.log("data from [SidePanel]: ", data.elements[selectedValue]);
-    // const element = data.elements[selectedValue];
-
-    // console.log("[SidePanel]: ", selectedValue);
 
     return (
         <SidePanelContainer>
-            {/* <ElementalTile data={selectedValue} /> */}
-            <ElementalTile data={element} />
+            
+            <ElementalTile data={element} className="section" />
 
-            {/* <ElementalData data={selectedValue} /> */}
-            <ElementalData data={element} />
+            <ElementalData data={element} className="section" />
 
-            {/* <ElementalDiagram data={selectedValue} /> */}
-            <ElementalDiagram data={element} />
+            <ElementalDiagram data={element} className="section" />
+
         </SidePanelContainer>
     )
 }
@@ -46,11 +36,15 @@ const SidePanelContainer = styled.div`
     justify-content: start;
     align-items: space-around;
     width: 20%;
-    height: 90%;
-    background-color: yellow;
-    outline: 0.5px solid lightskyblue;
-    padding: .5rem;
-    margin-right: 1.5rem;
+    height: 96%;
+    height: 100%;
+    padding: 1px;
+    /* outline: 1px solid yellow; */
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
 
-    /* --panel-width: 100%; */
+    .section {
+        height: 14.67%;
+        outline: 2.5px solid orange;
+    }
 `

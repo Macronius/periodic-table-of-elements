@@ -13,7 +13,7 @@ export const SelectedValueContext = createContext({
 // PROVIDER
 export const SelectedValueProvider = ({children}) => {
 
-    const [selectedValue, setSelectedValue] = useState(null);
+    const [selectedValue, setSelectedValue] = useState(0);
 
     const value = {selectedValue, setSelectedValue};
 

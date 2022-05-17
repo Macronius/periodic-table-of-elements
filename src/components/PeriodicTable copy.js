@@ -91,12 +91,10 @@ const PeriodicTableContainer = styled.div`
     grid-gap: 6px;
     z-index: 1;
 
-    /* width: auto; */
-    /* width: 79%; */
-    width: 100%:
+    width: auto;
+    width: 79%;
     min-width: 1200px;
     height: 100%;
-    height: auto;
     border-radius: 7px;
     padding: 2.25rem;
     /* padding-top: 10rem; */

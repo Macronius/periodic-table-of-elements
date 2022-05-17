@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import Sketch from 'react-p5';
 
@@ -15,32 +15,30 @@ let offset = 12;
 
 let atomic_mass, 
     electron_configuration, 
-    electron_configuration_semantic, 
     number;
 
 
 
 
 export const ElementalConfiguration = (props) => {
-    // console.log("[ElementalConfiguration] props: ", props.data);
+
+    // console.log(props);
+
+    if (props.parentDimensionsObj) {
+        const {parentWidth, parentHeight} = props.parentDimensionsObj;
+        // console.log(`[ElementalConfiguration] parentDimensions: W:${parentWidth} and H:${parentHeight}`);
+    }
     
     if (props.data) {
-        ({atomic_mass, electron_configuration, electron_configuration_semantic, number} = props.data);
+        ({atomic_mass, electron_configuration, number} = props.data);
     }
     else {
-        ({atomic_mass, electron_configuration, electron_configuration_semantic, number} = data.elements[0]);
+        ({atomic_mass, electron_configuration, number} = data.elements[0]);
     }
-    
-    // console.log(`
-    //     atomic mass: ${atomic_mass}\n
-    //     electron_configuration: ${electron_configuration}\n
-    //     electron_configuration_semantic: ${electron_configuration_semantic}\n
-    //     number: ${number}\n
-    // `);
-    // const {proton, neutron, electron} = props.particleMass;
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(300,300).parent(canvasParentRef);
+        // p5.createCanvas(330,330).parent(canvasParentRef);
+        p5.createCanvas(320,320).parent(canvasParentRef);
         p5.background("rgb(51,51,51)");
         p5.angleMode(p5.DEGREES);
     };
@@ -102,13 +100,24 @@ export const ElementalConfiguration = (props) => {
 //styled components
 const ElementalConfigurationContainer = styled.div`
     width: 96%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100%; */
     margin: 0 auto;
     /* background-color: melon; */
+    padding: 0.25rem;
 `;
 
 const SketchActual = styled(Sketch)`
-    margin: 0 auto;
+    /* width: auto; */
+    width: 100%;
+    /* width: 96%; */
+    margin: 0.5rem auto;
+    /* margin-left: 1.5rem; */
+    /* margin-top: 1rem; */
+    /* margin-left: calc(100% - 330px / 2); */
     /* z-index: 5; */
     /* width: 100%; */
     /* height: 100%; */

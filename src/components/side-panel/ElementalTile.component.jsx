@@ -72,13 +72,16 @@ export default ElementalTile;
 
 
 const ElementalTileContainer = styled.div`
-    width: 100%;
+    width: 98%;
+    margin: 0 auto;
     height: var(--panel-width);
-    border: 20px solid #c44552;
+    border: 10px inset #c44552;
+    border-radius: 3px;
     background-color: #711019;
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    box-shadow: 0 0 15px slategray;
 
     .element-tile-section {
         width: 50%;
