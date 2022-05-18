@@ -83,7 +83,6 @@ const PeriodicTable = () => {
 export default PeriodicTable;
 
 
-// styled components
 const PeriodicTableContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(18, 64px);
@@ -97,7 +96,6 @@ const PeriodicTableContainer = styled.div`
     height: 100%;
     border-radius: 7px;
     padding: 2.25rem;
-    /* padding-top: 10rem; */
     background-color: #FFFFfE;
     box-shadow: 0 0 15px slategray;
 

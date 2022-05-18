@@ -14,8 +14,6 @@ export default class ElementTileClass extends React.Component {
         }
     }
 
-
-    //methods
     onClickHandler = e => {
         console.log("event: ", e)
     }

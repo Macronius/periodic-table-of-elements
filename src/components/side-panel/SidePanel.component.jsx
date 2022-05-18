@@ -39,7 +39,6 @@ const SidePanelContainer = styled.div`
     height: 96%;
     height: 100%;
     padding: 1px;
-    /* outline: 1px solid yellow; */
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
 

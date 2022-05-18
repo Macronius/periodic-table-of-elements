@@ -1,7 +1,6 @@
 import React, { createContext, useState } from 'react';
 
 /* T E M P E R A T U R E   V A L U E  */
-// CONTEXT
 export const TemperatureValueContext = createContext(
     {
         temperatureValue: null,
@@ -9,7 +8,6 @@ export const TemperatureValueContext = createContext(
     }
 );
 
-// PROVIDER
 export const TemperatureValueProvider = ({children}) => {
 
     const [temperatureValue, setTemperatureValue] = useState(299);

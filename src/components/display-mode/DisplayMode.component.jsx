@@ -1,5 +1,5 @@
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { DisplayModeContext } from '../../contexts/displayMode.context';
 import { TemperatureValueContext } from '../../contexts/temperatureValue.context';
@@ -7,16 +7,6 @@ import { TemperatureValueContext } from '../../contexts/temperatureValue.context
 import { CategoriesKeyElement } from '../../components/CategoriesKey.component';
 
 import styled from 'styled-components';
-
-
-const colorMap_phases = {
-    "gas": "#055B34",
-    "gas-a": "#07b265",
-    "liquid": "#106CAF",
-    "liquid-a": "#1a9ffe",
-    "solid": "#ca1827",
-    "solid-a": "#fe2032",
-}
 
 
 const colorMap_categories = {
@@ -202,7 +192,6 @@ const DisplayModeSectionContainer = styled.div`
     margin-left: 2px;
     padding: 0.5rem;
     box-shadow: 0 0 7px slategray;
-    /* outline: 0.5px solid lightslategray; */
     border-radius: 5px;
 
     h2 {
@@ -303,17 +292,12 @@ const ColoredKeyContainerPhases = styled.div`
 
 const PhaseColorContainer = styled.div`
     display: flex;
-
-    /* outline: 0.5px solid gray; */
-    
     margin: 0.25rem 1rem;
 
     .color-square {
         margin-right: 1rem;
         width: 22px;
         height: 22px;
-        /* border: 1px solid black; */
-        /* border-color: darkslategray; */
         border-radius: 3px;
     }
 `

@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import {ElementalConfiguration} from './ElementalConfiguration';
-// import {RandomWalker} from '../RandomWalker.p5component';
 
 
 
@@ -21,7 +20,6 @@ const ElementalDiagram = (props) => {
 
             console.log(
                 `parentHeight: ${parentHeight} && parentWidth: ${parentWidth}`
-                // `parentHeight: ${parentDimensionsObj.parentHeight} && parentWidth: ${parentDimensionsObj.parentWidth}`
             );
             console.log(parentDimensionsObj);
         }
@@ -47,12 +45,10 @@ const ElementalDiagram = (props) => {
 export default ElementalDiagram;
 
 const ElementalDiagramContainer = styled.div`
-    /* width: calc(100% * 2/5); */
     width: 98%;
     margin: 0 auto;
     height: 100%;
     background-color: #fff;
-    /* background-color: orange; */
     border-radius: 3px;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
@@ -60,7 +56,6 @@ const ElementalDiagramContainer = styled.div`
 
     
     h3 {
-        /* padding: 0.25rem 0; */
         text-align: center;
         
     }

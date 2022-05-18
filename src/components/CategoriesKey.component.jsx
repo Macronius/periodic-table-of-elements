@@ -43,7 +43,6 @@ const CategoryColorContainer = styled.div`
     width: 150px;
     height: auto;
     margin-top: .25rem;
-    /* outline: 0.5px solid; */
     padding: 3px;
     display: flex;
     justify-content: start;

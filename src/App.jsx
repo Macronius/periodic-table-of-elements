@@ -43,12 +43,11 @@ const App = () => {
         <SidePanel />
 
         <RightContainer>
-          <div>
+          <div className="right-container-header">
             <h1>The Periodic Table of Elements</h1>
           </div>
           <PeriodicTable />
         </RightContainer>
-        {/* <PeriodicTable /> */}
 
       </ContentContainer>
 
@@ -61,19 +60,13 @@ export default App;
 
 const AppContainer = styled.div`
   width: 100vw;
-  /* height: 100vh; */
   height: calc(100vh - 200px);
-  /* position: fixed; */
-  /* top: 0; right: 0; bottom: 0; left: 0; */
-  /* border-radius: 7px; */
   background-color: #fff;
   background-color: #ebebf9;
   z-index: -10;
 `
 
 const ContentContainer = styled.div`
-  /* width: 70%;
-  height: 70%; */
   width: auto;
   height: 100%;
   display: flex;
@@ -91,18 +84,21 @@ const RightContainer = styled.div`
   width: 79%;
   height: 100%;
 
-  div {
-    /* box-shadow: 0 0 70px #ff00ff88 inset; */
-    /* box-shadow: 0 0 70px #f2ff0087 inset; */
+  .right-container-header {
     box-shadow: 0 0 70px #8e8e8e41 inset;
 
     h1 {
       margin: 3rem 0;
       margin-left: 5rem;
-      /* font-weight: bold; */
       font-size: 8rem;
       text-shadow: 4px 4px 10px darkslategray;
   
     }
+  }
+  .right-container-header::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 7px darkslategray;
   }
 `

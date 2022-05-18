@@ -9,8 +9,10 @@ const P5Container = () => {
     let speed2 = 50;
 
     let setup = (p5, canvasParentRef) => {
+        
         //Canvas of size 1000x800
         let xyz = p5.createCanvas(1000, 800).parent(canvasParentRef);
+
         //calculate to center of the canvas
         let x = (p5.windowWidth - p5.width) / 2;
         let y = (p5.windowHeight - p5.height) / 2;

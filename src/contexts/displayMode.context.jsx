@@ -1,7 +1,6 @@
 import React, { createContext, useState } from 'react';
 
 /* D I S P L A Y   M O D E */
-// CONTEXT
 export const DisplayModeContext = createContext(
     {
         displayMode: null,
@@ -9,10 +8,8 @@ export const DisplayModeContext = createContext(
     }
 );
 
-// PROVIDER
 export const DisplayModeProvider = ({children}) => {
 
-    // const [displayMode, setDisplayMode] = useState("categories");
     const [displayMode, setDisplayMode] = useState("categories");
     const value = {displayMode, setDisplayMode};
 

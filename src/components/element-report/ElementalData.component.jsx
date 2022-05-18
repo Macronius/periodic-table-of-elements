@@ -24,6 +24,7 @@ const ElementalData = (props) => {
         summary = "Hydrogen is the lightest element on the Periodic Table of Elements.  Its monotomic form is the most abundant substance in the universe, constituting nearly 75% of all baryonic mass.";
         atomic_volume = (atomic_mass / density).toFixed(2);
     }
+    // TROUBLESHOOT: the initial-value summary will likely cause issue later
     
 
     return (
@@ -74,18 +75,12 @@ const ElementalData = (props) => {
 export default ElementalData;
 
 const ElementalDataContainer = styled.div`
-    /* width: calc(100% * 3/5); */
     width: 100%;
     height: 700px;
-    /* height: 80%; */
-    /* background-color: orange; */
-    /* outline: 0.5px solid; */
     margin: 0;
     padding: .25rem;
     display: flex;
     flex-direction: column;
-    /* align-items: space-around; */
-    /* justify-content: center; */
     justify-content: space-around;
 
     .section-lg {
@@ -123,31 +118,22 @@ const ElementalDataContainer = styled.div`
             align-items: center;
             margin: 0;
             padding: 0;
-            /* overflow-y: scroll; */
 
             span {
                 font-weight: bold;
                 font-size: 12px;
                 height: 100%;
-                /* outline: 1px solid; */
             }
         }
-
-        /* .label {
-
-        } */
 
         .summary {
             font-weight: lighter;
             font-size: 12px;
             height: 60%;
-            /* line-height: 1px; */
         }
 
         .data-block  div p {
-            /* font-weight: bold; */
             font-size: 6px;
-            /* font-decoration: underline; */
         }
 
         .temps {
