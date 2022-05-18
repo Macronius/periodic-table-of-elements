@@ -5,7 +5,7 @@ import Sketch from 'react-p5';
 import styled from 'styled-components';
 
 import electron_dot_structure_utility from '../../utilities/electrons.utility';
-import nucleus_utility from '../../utilities/nucleus.utility'
+// import nucleus_utility from '../../utilities/nucleus.utility'
 
 import data from '../../data/PeriodicTableJSON.json';
 
@@ -13,14 +13,16 @@ let r_ring = 15;
 let r_circ = r_ring / 1.618;
 let offset = 12;
 
-let atomic_mass, 
-    electron_configuration, 
-    number;
+let electron_configuration;
+let number;
 
 
 
 
 export const ElementalConfiguration = (props) => {
+
+    let atomic_mass;
+
 
     // TO DO
     // if (props.parentDimensionsObj) {

@@ -43,7 +43,7 @@ const DisplayModeSection = () => {
 
     let tempVal;
     const [tVal, setTVal] = useState(298);
-    const [mode, setMode] = useState("categories");
+    // const [mode, setMode] = useState("categories");
 
 
     const {displayMode, setDisplayMode} = useContext(DisplayModeContext);
@@ -54,7 +54,7 @@ const DisplayModeSection = () => {
         e.preventDefault();
         const modeRange = document.getElementById("display-mode").value;
         console.log("modeRange: ", modeRange);
-        setMode(modeRange);
+        // setMode(modeRange);
         setDisplayMode(modeRange);
     }
 
