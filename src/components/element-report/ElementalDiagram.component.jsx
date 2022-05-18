@@ -31,14 +31,27 @@ const ElementalDiagram = (props) => {
         electron: 0.000549,
     }
 
+
+// const handleNucleus = () => {
+
+// }
+
+
     return (
         <ElementalDiagramContainer ref={parentContainerRef}>
             <h3>Simple Electron Model</h3>
+            {/* <div className="options">
+                <div className="nucleus" onClick={handleNucleus}></div>
+                <div className="protons"></div>
+                <div className="neutrons"></div>
+                <div className="electrons"></div>
+            </div> */}
             <ElementalConfiguration 
                 data={props.data} 
                 particleMass={particle_mass} 
                 parentDimensionsObj={parentDimensionsObj} 
             />
+            {/* <div className="extra-space-eConfig" /> */}
         </ElementalDiagramContainer>
     )
 }
@@ -56,7 +69,7 @@ const ElementalDiagramContainer = styled.div`
 
     
     h3 {
+        font-size: 18px;
         text-align: center;
-        
     }
 `

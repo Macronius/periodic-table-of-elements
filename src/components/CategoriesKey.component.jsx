@@ -4,10 +4,9 @@ import styled from 'styled-components';
 
 
 export const CategoriesKeyElement = (props) => {
-    console.log(props);
 
     const {category, colorOne, colorTwo} = props;
-    console.log(`category: ${category}, props.color1: ${colorOne}, props.color2: ${colorTwo}`);
+    // console.log(`category: ${category}, props.color1: ${colorOne}, props.color2: ${colorTwo}`);
 
     const [clr1, setClr1] = useState('#8d8d8d');
     const [clr2, setClr2] = useState('#fff');
@@ -35,9 +34,9 @@ export const CategoriesKeyElement = (props) => {
 }
 
 
-export const PhasesKeyElement = (props) => {
+// export const PhasesKeyElement = (props) => {
 
-}
+// }
 
 const CategoryColorContainer = styled.div`
     width: 150px;

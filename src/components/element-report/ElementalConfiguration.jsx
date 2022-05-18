@@ -73,7 +73,7 @@ export const ElementalConfiguration = (props) => {
             
         }
 
-        nucleus_utility(p5, props.particleMass, atomic_mass, number)
+        // nucleus_utility(p5, props.particleMass, atomic_mass, number)
         electron_dot_structure_utility(p5, number, 35, offset, 5);
 
     }
