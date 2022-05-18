@@ -21,7 +21,7 @@ let number;
 
 export const ElementalConfiguration = (props) => {
 
-    let atomic_mass;
+    // let atomic_mass;
 
 
     // TO DO
@@ -30,10 +30,12 @@ export const ElementalConfiguration = (props) => {
     // }
     
     if (props.data) {
-        ({atomic_mass, electron_configuration, number} = props.data);
+        // ({atomic_mass, electron_configuration, number} = props.data);
+        ({electron_configuration, number} = props.data);
     }
     else {
-        ({atomic_mass, electron_configuration, number} = data.elements[0]);
+        // ({atomic_mass, electron_configuration, number} = data.elements[0]);
+        ({electron_configuration, number} = data.elements[0]);
     }
 
     const setup = (p5, canvasParentRef) => {
